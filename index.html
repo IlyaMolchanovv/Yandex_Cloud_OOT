@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Заметки</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style>
+		body {
+			padding: 20px;
+		}
+
+		h1 {
+			margin-bottom: 20px;
+		}
+
+		form label {
+			font-weight: bold;
+		}
+
+		form input[type="text"],
+		form textarea {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			margin-bottom: 10px;
+		}
+
+		form button[type="submit"] {
+			padding: 10px 20px;
+			background-color: #007bff;
+			border: none;
+			color: #fff;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		#noteTable {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		#noteTable th,
+		#noteTable td {
+			padding: 10px;
+			border: 1px solid #ccc;
+		}
+
+		#noteTable th {
+			background-color: #f2f2f2;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Заметки</h1>
+		<form id="noteForm">
+			<div class="form-group">
+				<label for="title">Название:</label>
+				<input type="text" id="title" required class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="content">Содержание:</label>
+				<textarea id="content" required class="form-control"></textarea>
+			</div>
+			<button type="submit" class="btn btn-primary">Сохранить заметку</button>
+		</form>
+		<br>
+		<table id="noteTable" class="table">
+			<thead>
+				<tr>
+					<th>Название</th>
+					<th>Содержание</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>

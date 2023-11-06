@@ -29,25 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		titleInput.value = '';
 		contentInput.value = '';
 	});
-	
-	function sendDataToFunction(data) {
-		fetch("https://functions.yandexcloud.net/d4e75s2f1crbe3ck15iv", {
-			method: "POST",
-			body: JSON.stringify(data),
-			headers: {
-			  "Content-Type": "application/json"
-			}
-		})
-		.then((response) => response.json())
-		.then((result) => {
-			  console.log(result);
-			  // Обработка ответа от функции, если необходимо
-		})
-		.catch((error) => {
-		  console.error(error);
-		  // Обработка ошибок, если необходимо
-		});
-	}
 
 	function displayNotes() {
 		noteTable.innerHTML = '';
@@ -72,4 +53,17 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 	displayNotes();
+	
+	async function sendDataToFunction(data) {
+		try {
+			const response = await fetch('https://functions.yandexcloud.net/d4e75s2f1crbe3ck15iv', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				
+				//body: JSON.stringify(data)
+			},
+		}
+	});
 });

@@ -26,13 +26,27 @@
 			margin-bottom: 10px;
 		}
 
-		form button[type="submit"] {
+		.form-buttons {
+			display: flex;
+			justify-content: flex-start;
+		}
+
+		form button[type="submit"],
+		.export-button {
 			padding: 10px 20px;
-			background-color: #007bff;
 			border: none;
-			color: #fff;
 			border-radius: 4px;
 			cursor: pointer;
+		}
+
+		form button[type="submit"] {
+			background-color: #007bff;
+			color: #fff;
+		}
+
+		.export-button {
+			background-color: #28a745;
+			color: #fff;
 		}
 
 		#noteTable {
@@ -63,9 +77,12 @@
 				<label for="content">Содержание:</label>
 				<textarea id="content" required class="form-control"></textarea>
 			</div>
-			<button type="submit" class="btn btn-primary">Сохранить заметку</button>
+			<div class="form-buttons">
+				<button type="submit" class="btn btn-primary">Сохранить заметку</button>
+				<button type="button" class="btn export-button">Выгрузить заметки</button>
+				<br><br>
+			</div>
 		</form>
-		<br>
 		<table id="noteTable" class="table">
 			<thead>
 				<tr>
